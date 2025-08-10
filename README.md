@@ -8,7 +8,7 @@ ISAM tracks contributions from specific emissions sources and regions to polluta
 > This tutorial assumes basic CMAQ familiarity. For installation, see [EPA CMAQ Documentation](https://github.com/USEPA/CMAQ).  
 > **Tested with**: CMAQ v5.3+ (compiled with `-Disam` flag).
 
-#### Prerequisites:
+## Prerequisites
 * Installed CMAQ with ISAM (via bldit_cctm.csh with ISAM option).
 * Input data: Meteorology (from WRF/MCIP), emissions (gridded via SMOKE or similar), initial/boundary conditions.
 * Tools: netCDF utilities (nco, CDO), Python with netCDF4 for mask creation.
