@@ -36,8 +36,8 @@ setenv GR_EM_SYM_DATE_002 F
 * **NOTE:**
   - These labels (BIOG_EMIS, HK_PP_EMIS, etc.) are used in isam_control.txt to tag sources.
   - Date flag: 
-  • F = Static (use filename date)
-  • T = Dynamic (sync with simulation)
+    • F = Static (use filename date)
+    • T = Dynamic (sync with simulation)
 
 ####    b) Enable ISAM: For the third domain (e.g., $DOMAINS_GRID == "3"), set setenv CTM_ISAM Y. Additional ISAM configs:
 ```
