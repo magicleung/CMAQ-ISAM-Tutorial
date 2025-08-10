@@ -68,7 +68,7 @@ endif
 
 ## 4. Configure EmissCtrl_cb6r3_ae7_aq.nml
 #### This file contains the emissions control namelist, including the RegionsRegistry for regional masks, tailored for the cb6r3_ae7_aq mechanism. Store it in your working directory, e.g., $CMAQ_HOME/EmissCtrl_cb6r3_ae7_aq.nml. Reference it in run_cctm.csh as setenv EMISSCTRL_NML $cwd/EmissCtrl_${MECH}.nml.
-
+* RegionsRegistry Namelist: Define this in EmissCtrl_cb6r3_ae7_aq.nml:
 ```
 &RegionsRegistry
  RGN_NML  =   
@@ -85,6 +85,7 @@ endif
                 'ZH'       ,    'MASK_FN',      'ZH',
                 'HK'       ,    'MASK_FN',      'HK',
 ```
+* **Meaning:** Each line maps a region label (e.g., 'GZ' for Guangzhou) to a variable in the mask file (MASK_FN points to mask_3km.nc). ISAM uses these to apportion sources within regions. Ensure all regions listed here exist in mask_3km.nc.
 
 <br>
 
