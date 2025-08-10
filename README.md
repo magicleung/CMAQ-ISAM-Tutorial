@@ -1,6 +1,12 @@
 # CMAQ-ISAM-Tutorial
 _**This tutorial provides a step-by-step guide to using the Integrated Source Apportionment Method (ISAM) in the Community Multiscale Air Quality (CMAQ) model, taking the Greater Bay Area (GBA) of China as an example.**_
 
+ISAM tracks contributions from specific emissions sources and regions to pollutant concentrations, such as ozone or PM2.5. This guide emphasizes key configurations in the run_cctm.csh script (emissions settings), creating mask files for regional tagging, the EmissCtrl_cb6r3_ae7_aq.nml file for the RegionsRegistry namelist, and the isam_control.txt file, using the cb6r3_ae7_aq mechanism as an example. The tutorial assumes basic familiarity with CMAQ. For installation, refer to the EPA CMAQ documentation (https://github.com/USEPA/CMAQ). This example uses CMAQ v5.3+ with ISAM enabled (compile with -Disam flag).
+#### Prerequisites:
+* Installed CMAQ with ISAM (via bldit_cctm.csh with ISAM option).
+* Input data: Meteorology (from WRF/MCIP), emissions (gridded via SMOKE or similar), initial/boundary conditions.
+* Tools: netCDF utilities (nco, CDO), Python with netCDF4 for mask creation.
+
 ## 1. Prepare Input Data
 #### CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
 * **Meteorology and Grid:** Process WRF outputs with MCIP to get METCRO2D, METCRO3D, etc.
