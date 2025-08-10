@@ -198,6 +198,9 @@ ENDLIST eof
 <br>
  
 ## 6. Run the Model
+* Set environment
+* Execute
+* Outputs: ISAM files like SA_ACONC_*.nc.
 
 <br>
  
