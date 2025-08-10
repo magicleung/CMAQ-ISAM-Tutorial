@@ -98,50 +98,36 @@ TAG CLASSES |OZONE
 !!! TAG NAME |Three character text string (unique to each source definition)
 !!! REGION(S) |Keyword EVERYWHERE or variable names from the region file (multiple regions need to be comma delimited)
 !!! EMIS STREAM(S) |Emissions labels (multiple labels need to be comma delimited)
+
 !!! Target regions: HK (Hong Kong), GZ (Guangzhou), FS (Foshan), HZ (Huizhou), ZS (Zhongshan), ZQ (Zhaoqing), ZH (Zhuhai), SZ (Shenzhen), JM (Jiangmen), DG (Dongguan), OUTPRD (Outside PRD)
 !!! Target sectors: B (Biogenic), P (Power Plant), I (Industry), M (Mobile), O (Other), SHP (Ship)
 
 TAG NAME |HKB
 REGION(S) |HK
 EMIS STREAM(S) |BIOG_EMIS
+
 TAG NAME |HKP
 REGION(S) |EVERYWHERE
 EMIS STREAM(S) |HK_PP_EMIS
-TAG NAME |HKF
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_LAF_EMIS
-TAG NAME |HKG
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_M1_EMIS
-TAG NAME |HKD
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_M2_EMIS
-TAG NAME |HKR
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_AR1_EMIS
-TAG NAME |HKS
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_AR2_EMIS
-TAG NAME |HKO
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |HK_AR3_EMIS
-# (Continue similarly for GZB, GZP, ..., up to ZHO as in your example)
-# For outside regions:
-TAG NAME |OPR
-REGION(S) |OUTPRD
-EMIS STREAM(S) |PRD_PP_EMIS,PRD_LAF_EMIS,PRD_IND_EMIS,PRD_CON_EMIS,PRD_M1_EMIS,PRD_M2_EMIS,PRD_M3_EMIS
-TAG NAME |OPP
-REGION(S) |OUTPRD
-EMIS STREAM(S) |PRD_AR1_EMIS,PRD_AR2_EMIS,PRD_AR3_EMIS,PRD_P1_EMIS,PRD_P2_EMIS
-TAG NAME |OPM
-REGION(S) |OUTPRD
-EMIS STREAM(S) |MEIC_POW_EMIS,MEIC_IND_EMIS,MEIC_TRA_EMIS,MEIC_RES_EMIS
-TAG NAME |OPB
-REGION(S) |OUTPRD
-EMIS STREAM(S) |BIOG_EMIS
-TAG NAME |SHP
-REGION(S) |EVERYWHERE
-EMIS STREAM(S) |MARINE_EMIS
+
+...
+
+TAG NAME        |GZB
+REGION(S)       |GZ
+EMIS STREAM(S)  |BIOG_EMIS
+
+TAG NAME        |GZP
+REGION(S)       |GZ
+EMIS STREAM(S)  |PRD_PP_EMIS
+
+TAG NAME        |GZF
+REGION(S)       |GZ
+EMIS STREAM(S)  |PRD_LAF_EMIS
+
+...
+
+# (Continue similarly for other streams and regions)
+
 ENDLIST eof
 ```
 * #### Meaning:
