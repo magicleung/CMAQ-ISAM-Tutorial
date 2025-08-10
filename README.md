@@ -79,7 +79,7 @@ endif
 
 <br>
 
-## 4. Configure EmissCtrl_cb6r3_ae7_aq.nml
+## 4. Create EmissCtrl_cb6r3_ae7_aq.nml
 #### This file contains the emissions control namelist, including the RegionsRegistry for regional masks, tailored for the cb6r3_ae7_aq mechanism. 
 * Store the file in your working directory (e.g., `$CMAQ_HOME/scripts/EmissCtrl_cb6r3_ae7_aq.nml`).
 * Reference it by adding the following line to `run_cctm.csh`:  
@@ -106,7 +106,7 @@ endif
 
 <br>
 
-## 5. Configure isam_control.txt
+## 5. Create isam_control.txt
 * This file defines tags for source apportionment. Store it in your working directory, e.g., $CMAQ_HOME/isam_control.txt.
 * Example for GBA (Ozone Tracking): Based on your provided config, adapted for cb6r3_ae7_aq mechanism. Tracks ozone contributions from sectors (B=Biogenic, P=Power, etc.) in GBA regions (HK, GZ, etc.) and outside (OUTPRD, OPM, etc.). Update labels to match run_cctm.csh (e.g., GD_PP_EMIS instead of PRD_PP_EMIS if applicable).
 ```
@@ -174,3 +174,11 @@ ENDLIST eof
   * TAG CLASSES |OZONE: Tracks ozone-related species (O3, NOx, VOCs).
   * Each tag block: TAG NAME is a unique 3-letter code (e.g., 'HKB' = Hong Kong Biogenic). REGION(S) links to mask variables or 'EVERYWHERE'. EMIS STREAM(S) matches emission labels from run_cctm.csh.
   * Avoid double-tagging sources. For GBA, this tags city-specific sectors (e.g., Guangzhou power plants as 'GZP') and ships/maritime everywhere.
+
+<br>
+ 
+## 6. Run the Model
+
+<br>
+ 
+## 7. Analyze Outputs
