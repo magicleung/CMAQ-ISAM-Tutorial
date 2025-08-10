@@ -60,8 +60,7 @@ endif
 <br>
 
 ## 3. Create the Mask File
-The mask file is a NetCDF file defining binary (0/1) masks for regions. Each variable in the file represents a region (e.g., 'GZ' for Guangzhou), with 1 where the region applies and 0 elsewhere. This allows ISAM to tag emissions/concentrations by geographic area.
-We provide Python scripts Download_ERA5-3D.py and Download_ERA5-2D.py to help automate the data download process.
+#### The mask file is a NetCDF file defining binary (0/1) masks for regions. Each variable in the file represents a region (e.g., 'GZ' for Guangzhou), with 1 where the region applies and 0 elsewhere. This allows ISAM to tag emissions/concentrations by geographic area.
 * File Name and Path: Name it mask_3km.nc (or similar). Store it in your input directory, e.g., $CMAQ_DATA/masks/mask_3km.nc. Reference it in run_cctm.csh as setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc.
 * 
 
