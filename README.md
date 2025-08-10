@@ -68,6 +68,7 @@ endif
 
 ## 4. Configure EmissCtrl_cb6r3_ae7_aq.nml
 #### This file contains the emissions control namelist, including the RegionsRegistry for regional masks, tailored for the cb6r3_ae7_aq mechanism. Store it in your working directory, e.g., $CMAQ_HOME/EmissCtrl_cb6r3_ae7_aq.nml. Reference it in run_cctm.csh as setenv EMISSCTRL_NML $cwd/EmissCtrl_${MECH}.nml.
+
 ```
 &RegionsRegistry
  RGN_NML  =   
