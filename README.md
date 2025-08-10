@@ -8,15 +8,7 @@ _**This tutorial provides a step-by-step guide to using the Integrated Source Ap
 
 <br>
 
-## 2. Create the Mask File
-The mask file is a NetCDF file defining binary (0/1) masks for regions. Each variable in the file represents a region (e.g., 'GZ' for Guangzhou), with 1 where the region applies and 0 elsewhere. This allows ISAM to tag emissions/concentrations by geographic area.
-We provide Python scripts Download_ERA5-3D.py and Download_ERA5-2D.py to help automate the data download process.
-* File Name and Path: Name it mask_3km.nc (or similar). Store it in your input directory, e.g., $CMAQ_DATA/masks/mask_3km.nc. Reference it in run_cctm.csh as setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc.
-* 
-
-<br>
-
-## 3. Configure the Run Script (run_cctm.csh)
+## 2. Configure the Run Script (run_cctm.csh)
 ####    a) Emissions Settings: Define emission file paths and labels. Example snippet for selected streams:
 ```
 set EMISfile = emiss_MEGAN_${RUNID}_${CUR_JDATE}.ncf
@@ -53,6 +45,14 @@ setenv SA_DD_1 "$OUTDIR/CCTM_SA_DRYDEP_${CTM_APPL}.nc -v"
 setenv SA_WD_1 "$OUTDIR/CCTM_SA_WETDEP_${CTM_APPL}.nc -v"
 setenv SA_CGRID_1 "$OUTDIR/CCTM_SA_CGRID_${CTM_APPL}.nc -v"
 ```
+
+<br>
+
+## 3. Create the Mask File
+The mask file is a NetCDF file defining binary (0/1) masks for regions. Each variable in the file represents a region (e.g., 'GZ' for Guangzhou), with 1 where the region applies and 0 elsewhere. This allows ISAM to tag emissions/concentrations by geographic area.
+We provide Python scripts Download_ERA5-3D.py and Download_ERA5-2D.py to help automate the data download process.
+* File Name and Path: Name it mask_3km.nc (or similar). Store it in your input directory, e.g., $CMAQ_DATA/masks/mask_3km.nc. Reference it in run_cctm.csh as setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc.
+* 
 
 <br>
 
