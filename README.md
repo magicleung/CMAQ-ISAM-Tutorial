@@ -25,25 +25,36 @@ setenv GR_EM_SYM_DATE_002 F
 ```
 * These labels (BIOG_EMIS, HK_PP_EMIS, etc.) are used in isam_control.txt to tag sources.
 
-####    b) Enable ISAM: For the 3km domain (e.g., $DOMAINS_GRID == "3"), set setenv CTM_ISAM Y. Additional ISAM configs:
+####    b) Enable ISAM: For the third domain (e.g., $DOMAINS_GRID == "3"), set setenv CTM_ISAM Y. Additional ISAM configs:
 ```
-setenv SA_IOLIST ${WORKDIR}/isam_control.txt
-setenv ISAM_BLEV_ELEV " 1 1"
-setenv AISAM_BLEV_ELEV " 1 1"
-# Initial condition flags
-if ($NEW_START == true || $NEW_START == TRUE ) then
-   setenv ISAM_NEW_START Y
-   setenv ISAM_PREVDAY
-else
-   setenv ISAM_NEW_START N
-   setenv ISAM_PREVDAY "$OUTDIR/CCTM_SA_CGRID_${RUNID}_${YES_GDATE}.nc"
+#> Integrated Source Apportionment Method (ISAM) Options
+if ( "$DOMAINS_GRID" == "3" ) then
+  setenv CTM_ISAM Y
+  if ( $?CTM_ISAM ) then
+     if ( $CTM_ISAM == 'Y' || $CTM_ISAM == 'T' ) then
+        setenv SA_IOLIST ${WORKDIR}/isam_control.txt
+        setenv ISAM_BLEV_ELEV " 1 1"
+        setenv AISAM_BLEV_ELEV " 1 1"
+ 
+        #> Set Up ISAM Initial Condition Flags
+        if ($NEW_START == true || $NEW_START == TRUE ) then
+           setenv ISAM_NEW_START Y
+           setenv ISAM_PREVDAY
+        else
+           setenv ISAM_NEW_START N
+           setenv ISAM_PREVDAY "$OUTDIR/CCTM_SA_CGRID_${RUNID}_${YES_GDATE}.nc"
+        endif
+ 
+        #> Set Up ISAM Output Filenames
+        setenv SA_ACONC_1      "$OUTDIR/CCTM_SA_ACONC_${CTM_APPL}.nc -v"
+        setenv SA_CONC_1       "$OUTDIR/CCTM_SA_CONC_${CTM_APPL}.nc -v"
+        setenv SA_DD_1         "$OUTDIR/CCTM_SA_DRYDEP_${CTM_APPL}.nc -v"
+        setenv SA_WD_1         "$OUTDIR/CCTM_SA_WETDEP_${CTM_APPL}.nc -v"
+        setenv SA_CGRID_1      "$OUTDIR/CCTM_SA_CGRID_${CTM_APPL}.nc -v"
+ 
+     endif
+  endif
 endif
-# Output filenames
-setenv SA_ACONC_1 "$OUTDIR/CCTM_SA_ACONC_${CTM_APPL}.nc -v"
-setenv SA_CONC_1 "$OUTDIR/CCTM_SA_CONC_${CTM_APPL}.nc -v"
-setenv SA_DD_1 "$OUTDIR/CCTM_SA_DRYDEP_${CTM_APPL}.nc -v"
-setenv SA_WD_1 "$OUTDIR/CCTM_SA_WETDEP_${CTM_APPL}.nc -v"
-setenv SA_CGRID_1 "$OUTDIR/CCTM_SA_CGRID_${CTM_APPL}.nc -v"
 ```
 
 <br>
