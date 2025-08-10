@@ -78,7 +78,7 @@ endif
 * Visual Example (Guangzhou Mask):
   
   ![Alt text](Demo/Guangzhou_mask.jpg)  
-  *Figure: Binary mask for Guangzhou region (1=included, 0=excluded) visualized using ncview. White areas represent Guangzhou territory, while black areas are excluded.*
+  *NOTE: Binary mask for Guangzhou region visualized using ncview. Red areas represent Guangzhou territory, blue areas are excluded.*
 
 <br>
 
