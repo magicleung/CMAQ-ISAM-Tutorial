@@ -174,6 +174,13 @@ ENDLIST eof
   * TAG CLASSES |OZONE: Tracks ozone-related species (O3, NOx, VOCs).
   * Each tag block: TAG NAME is a unique 3-letter code (e.g., 'HKB' = Hong Kong Biogenic). REGION(S) links to mask variables or 'EVERYWHERE'. EMIS STREAM(S) matches emission labels from run_cctm.csh.
   * Avoid double-tagging sources. For GBA, this tags city-specific sectors (e.g., Guangzhou power plants as 'GZP') and ships/maritime everywhere.
+  * **Example Decoded - GZP**:
+    ```plaintext
+    TAG NAME        |GZP               # Guangzhou Power Plants tag
+    REGION(S)       |GZ                # Applies only to Guangzhou mask area
+    EMIS STREAM(S)  |PRD_PP_EMIS       # Matches power plant emissions label in run_cctm.csh
+    ```
+    This configuration will track ozone contributions specifically from power plants within Guangzhou.
 
 <br>
  
