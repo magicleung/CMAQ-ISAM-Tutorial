@@ -75,7 +75,7 @@ endif
 * Reference it by adding the following line to `run_cctm.csh`:
   ```bash
   setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc
-* 
+* Visual Example (Guangzhou Mask):
 
 <br>
 
