@@ -64,7 +64,7 @@ endif
 * File Name and Path: Name it mask_3km.nc (or similar). Store it in your input directory, e.g., `$CMAQ_DATA/masks/mask_3km.nc`.
 * Reference it by adding the following line to `run_cctm.csh`:
   ```bash
-setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc
+  setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc
 * 
 
 <br>
