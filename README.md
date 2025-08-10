@@ -4,7 +4,7 @@ _**This tutorial provides a step-by-step guide to using the Integrated Source Ap
 ## 1. Prepare Input Data
 #### CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
 * **Meteorology and Grid:** Process WRF outputs with MCIP to get METCRO2D, METCRO3D, etc.
-* **Emissions Setup:** Emissions are tagged by sector (e.g., biogenic, power plants) and region. Use SMOKE or equivalent to generate gridded emissions files (e.g., EMIS_3D.nc). In ISAM, emissions streams are labeled (e.g., BIOG_EMIS for biogenic, GD_PP_EMIS for Guangdong power plants). These labels must match your run_cctm.csh and isam_control.txt.
+* **Emissions Setup:** Emissions are tagged by sector (e.g., biogenic, mobile, power plants) and region. Use SMOKE or equivalent to generate gridded emissions files (e.g., EMIS_3D.nc). In ISAM, emissions streams are labeled (e.g., BIOG_EMIS for biogenic, GD_PP_EMIS for Guangdong power plants). These labels must match your run_cctm.csh and isam_control.txt.
 
 <br>
 
@@ -66,8 +66,29 @@ endif
 
 <br>
 
-## 4. Configure isam_control.txt
-* This file defines tags for source apportionment. Store it in your xxx directory, e.g., $CMAQ_HOME/isam_control.txt.
+## 4. Configure EmissCtrl_cb6r3_ae7_aq.nml
+#### This file contains the emissions control namelist, including the RegionsRegistry for regional masks, tailored for the cb6r3_ae7_aq mechanism. Store it in your working directory, e.g., $CMAQ_HOME/EmissCtrl_cb6r3_ae7_aq.nml. Reference it in run_cctm.csh as setenv EMISSCTRL_NML $cwd/EmissCtrl_${MECH}.nml.
+```
+&RegionsRegistry
+ RGN_NML  =   
+ !          | Region Label   | File_Label  | Variable on File
+                'PRD'      ,    'MASK_FN',      'PRD',
+                'SZ'       ,    'MASK_FN',      'SZ',
+                'GZ'       ,    'MASK_FN',      'GZ',
+                'FS'       ,    'MASK_FN',      'FS',
+                'DG'       ,    'MASK_FN',      'DG',
+                'ZS'       ,    'MASK_FN',      'ZS',
+                'HZ'       ,    'MASK_FN',      'HZ',
+                'JM'       ,    'MASK_FN',      'JM',
+                'ZQ'       ,    'MASK_FN',      'ZQ',
+                'ZH'       ,    'MASK_FN',      'ZH',
+                'HK'       ,    'MASK_FN',      'HK',
+```
+
+<br>
+
+## 5. Configure isam_control.txt
+* This file defines tags for source apportionment. Store it in your working directory, e.g., $CMAQ_HOME/isam_control.txt.
 * Example for GBA (Ozone Tracking): Based on your provided config, adapted for cb6r3_ae7_aq mechanism. Tracks ozone contributions from sectors (B=Biogenic, P=Power, etc.) in GBA regions (HK, GZ, etc.) and outside (OUTPRD, OPM, etc.). Update labels to match run_cctm.csh (e.g., GD_PP_EMIS instead of PRD_PP_EMIS if applicable).
 ```
 !!! CMAQ-ISAM tag definition control file
