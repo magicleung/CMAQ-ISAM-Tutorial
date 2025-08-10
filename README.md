@@ -2,11 +2,7 @@
 **This tutorial provides a step-by-step guide to using the Integrated Source Apportionment Method (ISAM) in the Community Multiscale Air Quality (CMAQ) model, taking the Greater Bay Area (GBA) of China as an example.**
 
 ## Overview
-ISAM tracks contributions from specific emissions sources and regions to pollutant concentrations, such as ozone or PM2.5. This guide emphasizes key configurations in the run_cctm.csh script (emissions settings), creating mask files for regional tagging, the EmissCtrl_cb6r3_ae7_aq.nml file for the RegionsRegistry namelist, and the isam_control.txt file, using the cb6r3_ae7_aq mechanism as an example. 
-
-> **Note**  
-> This tutorial assumes basic CMAQ familiarity. For installation, see [EPA CMAQ Documentation](https://github.com/USEPA/CMAQ).  
-> **Tested with**: CMAQ v5.3+ (compiled with `-Disam` flag).
+ISAM tracks contributions from specific emissions sources and regions to pollutant concentrations, such as ozone or PM2.5. This guide emphasizes key configurations in the run_cctm.csh script (emissions settings), creating mask files for regional tagging, the EmissCtrl_cb6r3_ae7_aq.nml file for the RegionsRegistry namelist, and the isam_control.txt file, using the cb6r3_ae7_aq mechanism as an example.The tutorial assumes basic familiarity with CMAQ. For installation, refer to the EPA CMAQ documentation (https://github.com/USEPA/CMAQ). This example uses CMAQ v5.3+ with ISAM enabled (compile with -Disam flag).
 
 ## Prerequisites
 * Installed CMAQ with ISAM (via bldit_cctm.csh with ISAM option).
