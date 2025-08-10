@@ -1,5 +1,5 @@
 # CMAQ-ISAM-Tutorial
-_**This tutorial provides a step-by-step guide to using the Integrated Source Apportionment Method (ISAM) in the Community Multiscale Air Quality (CMAQ) model.**_
+_**This tutorial provides a step-by-step guide to using the Integrated Source Apportionment Method (ISAM) in the Community Multiscale Air Quality (CMAQ) model, taking the Greater Bay Area (GBA) of China as an example.**_
 
 ## 1. Prepare Input Data
 #### CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
