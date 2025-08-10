@@ -2,7 +2,7 @@
 _**This tutorial provides a step-by-step guide to using the Integrated Source Apportionment Method (ISAM) in the Community Multiscale Air Quality (CMAQ) model.**_
 
 ## 1. Prepare Input Data
-CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
+#### CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
 * Meteorology and Grid: Process WRF outputs with MCIP to get METCRO2D, METCRO3D, etc.
 * Emissions Setup: Emissions are tagged by sector (e.g., biogenic, power plants) and region. Use SMOKE or equivalent to generate gridded emissions files (e.g., EMIS_3D.nc). In ISAM, emissions streams are labeled (e.g., BIOG_EMIS for biogenic, GD_PP_EMIS for Guangdong power plants). These labels must match your run_cctm.csh and isam_control.txt.
 
