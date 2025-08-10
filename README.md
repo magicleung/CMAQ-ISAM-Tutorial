@@ -102,7 +102,7 @@ endif
                 'ZH'       ,    'MASK_FN',      'ZH',
                 'HK'       ,    'MASK_FN',      'HK',
 ```
-* **Meaning:** Each line maps a region label (e.g., 'GZ' for Guangzhou) to a variable in the mask file (MASK_FN points to mask_3km.nc). ISAM uses these to apportion sources within regions. Ensure all regions listed here exist in mask_3km.nc.
+* **NOTE:** Each line maps a region label (e.g., 'GZ' for Guangzhou) to a variable in the mask file (MASK_FN points to mask_3km.nc). ISAM uses these to apportion sources within regions. Ensure all regions listed here exist in mask_3km.nc.
 
 <br>
 
