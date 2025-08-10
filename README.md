@@ -71,10 +71,10 @@ endif
 
 ## 3. Create the Mask File
 #### The mask file is a NetCDF file defining binary (0/1) masks for regions. Each variable in the file represents a region (e.g., 'GZ' for Guangzhou), with 1 where the region applies and 0 elsewhere. This allows ISAM to tag emissions/concentrations by geographic area.
-* File Name and Path: Name it mask_3km.nc (or similar). Store it in your input directory, e.g., `$CMAQ_DATA/masks/mask_3km.nc`.
+* File Name and Path: Name it mask_GBA.nc (or similar). Store it in your input directory, e.g., `$CMAQ_DATA/masks/mask_GBA.nc`.
 * Reference it by adding the following line to `run_cctm.csh`:
   ```bash
-  setenv MASK_FN $CMAQ_DATA/masks/mask_3km.nc
+  setenv MASK_FN $CMAQ_DATA/masks/mask_GBA.nc
 * Visual Example (Guangzhou Mask):
   
   ![Alt text](Demo/Guangzhou_mask.jpg)  
@@ -105,7 +105,7 @@ endif
                 'ZH'       ,    'MASK_FN',      'ZH',
                 'HK'       ,    'MASK_FN',      'HK',
 ```
-* **NOTE:** Each line maps a region label (e.g., 'GZ' for Guangzhou) to a variable in the mask file (MASK_FN points to mask_3km.nc). ISAM uses these to apportion sources within regions. Ensure all regions listed here exist in mask_3km.nc.
+* **NOTE:** Each line maps a region label (e.g., 'GZ' for Guangzhou) to a variable in the mask file (MASK_FN points to mask_GBA.nc). ISAM uses these to apportion sources within regions. Ensure all regions listed here exist in mask_GBA.nc.
 
 <br>
 
