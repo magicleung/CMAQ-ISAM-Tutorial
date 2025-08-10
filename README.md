@@ -14,7 +14,7 @@ ISAM tracks contributions from specific emissions sources and regions to polluta
 ## 1. Prepare Input Data
 #### CMAQ-ISAM requires standard CMAQ inputs, plus custom tags for sources/regions.
 * **Meteorology and Grid:** Process WRF outputs with MCIP to get METCRO2D, METCRO3D, etc.
-* **Emissions Setup:** Emissions are tagged by sector (e.g., biogenic, mobile, power plants) and region. Use SMOKE or equivalent to generate gridded emissions files (e.g., EMIS_3D.nc). In ISAM, emissions streams are labeled (e.g., BIOG_EMIS for biogenic, HK_MV_EMIS for Hong Kong Mobile Sources, GD_PP_EMIS for Guangdong power plants). These labels must match your run_cctm.csh and isam_control.txt.
+* **Emissions Setup:** Emissions are tagged by sector (e.g., biogenic, mobile, power plants) and region. Use **SMOKE** or equivalent to generate gridded emissions files (e.g., EMIS_3D.nc). In ISAM, emissions streams are labeled (e.g., BIOG_EMIS for biogenic, HK_MV_EMIS for Hong Kong Mobile Sources, GD_PP_EMIS for Guangdong power plants). These labels must match your run_cctm.csh and isam_control.txt.
 
 <br>
 
