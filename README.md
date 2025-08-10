@@ -67,7 +67,7 @@ endif
 <br>
 
 ## 4. Configure isam_control.txt
-* This file defines tags for source apportionment. Store it in your config directory, e.g., $CMAQ_HOME/config/isam_control.txt.
+* This file defines tags for source apportionment. Store it in your xxx directory, e.g., $CMAQ_HOME/isam_control.txt.
 * Example for GBA (Ozone Tracking): Based on your provided config, adapted for cb6r3_ae7_aq mechanism. Tracks ozone contributions from sectors (B=Biogenic, P=Power, etc.) in GBA regions (HK, GZ, etc.) and outside (OUTPRD, OPM, etc.). Update labels to match run_cctm.csh (e.g., GD_PP_EMIS instead of PRD_PP_EMIS if applicable).
 ```
 !!! CMAQ-ISAM tag definition control file
@@ -90,7 +90,9 @@ endif
 !!! PM25_IONS - ANAI, ANAJ, AMGJ, AKJ, ACAJ, AFEJ, AALJ, ASIJ, ATIJ, AMNJ, AOTHRI, AOTHRJ
 !!! OZONE - O3, all NITRATE species, and all VOC species
 !!! CHLORINE - ACLI, ACLJ, HCL
+
 TAG CLASSES |OZONE
+
 !!! The following are source definition text blocks in the format. Provide a 3-line block for each source you want to track.
 !!! Do not assign the same source of mass in more than 1 source definition block.
 !!! TAG NAME |Three character text string (unique to each source definition)
@@ -98,6 +100,7 @@ TAG CLASSES |OZONE
 !!! EMIS STREAM(S) |Emissions labels (multiple labels need to be comma delimited)
 !!! Target regions: HK (Hong Kong), GZ (Guangzhou), FS (Foshan), HZ (Huizhou), ZS (Zhongshan), ZQ (Zhaoqing), ZH (Zhuhai), SZ (Shenzhen), JM (Jiangmen), DG (Dongguan), OUTPRD (Outside PRD)
 !!! Target sectors: B (Biogenic), P (Power Plant), I (Industry), M (Mobile), O (Other), SHP (Ship)
+
 TAG NAME |HKB
 REGION(S) |HK
 EMIS STREAM(S) |BIOG_EMIS
@@ -142,6 +145,6 @@ EMIS STREAM(S) |MARINE_EMIS
 ENDLIST eof
 ```
 * Meaning:
-  TAG CLASSES |OZONE: Tracks ozone-related species (O3, NOx, VOCs).
-  Each tag block: TAG NAME is a unique 3-letter code (e.g., 'HKB' = Hong Kong Biogenic). REGION(S) links to mask variables or 'EVERYWHERE'. EMIS STREAM(S) matches emission labels from run_cctm.csh.
-  Avoid double-tagging sources. For GBA, this tags city-specific sectors (e.g., Guangzhou power plants as 'GZP') and ships/maritime everywhere.
+  * TAG CLASSES |OZONE: Tracks ozone-related species (O3, NOx, VOCs).
+  * Each tag block: TAG NAME is a unique 3-letter code (e.g., 'HKB' = Hong Kong Biogenic). REGION(S) links to mask variables or 'EVERYWHERE'. EMIS STREAM(S) matches emission labels from run_cctm.csh.
+  * Avoid double-tagging sources. For GBA, this tags city-specific sectors (e.g., Guangzhou power plants as 'GZP') and ships/maritime everywhere.
