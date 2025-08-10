@@ -170,7 +170,7 @@ EMIS STREAM(S)  |PRD_LAF_EMIS
 
 ENDLIST eof
 ```
-* #### Meaning:
+* #### NOTE:
   * **TAG CLASSES |OZONE**: Tracks ozone-related species (O3, NOx, VOCs) and their precursors.
   
   * **Tag Block Structure**:
