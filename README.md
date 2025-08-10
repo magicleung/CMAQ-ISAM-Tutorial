@@ -21,7 +21,7 @@ setenv GR_EMIS_002 ${EMISpath}/${EMISfile}
 setenv GR_EMIS_LAB_002 HK_PP_EMIS
 setenv GR_EM_SYM_DATE_002 F
 
-# Continue for HK_IND_EMIS, HK_MV_EMIS, HK_AR_EMIS, GD_PP_EMIS, GD_IND_EMIS, GD_MV_EMIS, GD_AR_EMIS, MARINE_EMIS, MEIC_EMIS
+# Continue for e.g. HK_IND_EMIS, HK_MV_EMIS, HK_AR_EMIS, GD_PP_EMIS, GD_IND_EMIS, GD_MV_EMIS, GD_AR_EMIS, MARINE_EMIS, MEIC_EMIS
 ```
 * These labels (BIOG_EMIS, HK_PP_EMIS, etc.) are used in isam_control.txt to tag sources.
 
